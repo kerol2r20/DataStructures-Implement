@@ -1,6 +1,6 @@
 typedef struct ListNode {
     int value;
-    ListNode *next;
+    struct ListNode *next;
 } ListNode;
 
 ListNode* createNode(int value);
