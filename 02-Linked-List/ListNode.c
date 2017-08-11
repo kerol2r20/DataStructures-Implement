@@ -1,9 +1,6 @@
 #include "ListNode.h"
 #include <stdlib.h>
 
-#ifndef LISTNODE_H
-#define LISTNODE_H
-
 ListNode* createNode(int value) {
     ListNode *head = (ListNode*)malloc(sizeof(ListNode));
     head->next=NULL;
@@ -50,5 +47,3 @@ void reverseList(ListNode **head) {
     } while((*head)!=NULL);
     (*head)=previous;
 }
-
-#endif
