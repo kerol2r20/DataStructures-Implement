@@ -8,7 +8,12 @@ int main() {
     }
     removeItem(head, 3);
     for(ListNode *temp=head; temp!=NULL; temp=temp->next){
-        printf("%d\n", temp->value);
+        printf("%d", temp->value);
+    }
+    printf("\n");
+    reverseList(&head);
+    for(ListNode *temp=head; temp!=NULL; temp=temp->next){
+        printf("%d", temp->value);
     }
     freeLinkedList(head);
     return 0;

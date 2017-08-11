@@ -40,4 +40,15 @@ void freeLinkedList(ListNode *head) {
     }
 }
 
+void reverseList(ListNode **head) {
+    ListNode *previous=NULL, *post=NULL;
+    do {
+        post=(*head)->next;
+        (*head)->next=previous;
+        previous=(*head);
+        (*head)=post;
+    } while((*head)!=NULL);
+    (*head)=previous;
+}
+
 #endif

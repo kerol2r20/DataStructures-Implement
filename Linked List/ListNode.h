@@ -10,3 +10,5 @@ void attachList(ListNode *head, ListNode *node);
 void removeItem(ListNode *head, int target);
 
 void freeLinkedList(ListNode *head);
+
+void reverseList(ListNode **head);
