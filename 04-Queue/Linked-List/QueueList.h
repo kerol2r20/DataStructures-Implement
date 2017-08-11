@@ -1,12 +1,14 @@
 #ifndef QUEUELIST_H
 #define QUEUELIST_H
 
-#include "../../02-Linked-List/ListNode.h";
+#include "../../02-Linked-List/ListNode.h"
 
 typedef struct QueueList {
     ListNode *rear;
     ListNode *front;
 } QueueList;
+
+QueueList* createQueueList();
 
 int isEmpty(QueueList *queue);
 
