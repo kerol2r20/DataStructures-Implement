@@ -13,7 +13,7 @@
     - [x] Array implementation
     - [x] Linked-List implementation
 - [ ] Tree
-    - [ ] Binary search tree
+    - [x] Binary search tree
     - [ ] Tree traversal
 - [ ] Graph
     - [ ] Graph traversal (DFS, BFS)
