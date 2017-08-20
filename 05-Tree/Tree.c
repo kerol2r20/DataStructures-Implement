@@ -34,6 +34,7 @@ void BSTInsert(TreeNode *root, int value) {
     if(value>root->value) {
         if(!root->right) {
             root->right=createTreeNode(value);
+            root->right->parents=root;
         }
         else {
             BSTInsert(root->right, value);
@@ -42,6 +43,7 @@ void BSTInsert(TreeNode *root, int value) {
     else if(value<root->value) {
         if(!root->left) {
             root->left=createTreeNode(value);
+            root->left->parents=root;
         }
         else {
             BSTInsert(root->left, value);
@@ -55,4 +57,43 @@ void BSTInsert(TreeNode *root, int value) {
 
 void BSTDelete(TreeNode *root, int value) {
     TreeNode *target=BSTSearch(root, value);
+
+    // Find out the max node of left child tree of min node of right tree
+    TreeNode *replace=NULL;
+    if(target->left) {
+        replace=target->left;
+        while(replace->right) replace=replace->right;
+    }
+    else if(target->right) {
+        replace=target->right;
+        while(replace->left) replace=replace->left;
+    }
+    else {
+        replace=target;
+    }
+    
+    target->value=replace->value;
+    TreeNode *parents=replace->parents;
+    TreeNode *subreplace=NULL;
+    if(replace->left) subreplace=replace->left;
+    if(replace->right) subreplace=replace->right;
+    if(parents) {
+        if(parents->left==replace) {
+            if(subreplace) {
+                parents->left=subreplace;
+            }
+            else {
+                parents->left=NULL;
+            }
+        }
+        else if (parents->right==replace) {
+            if(subreplace) {
+                parents->right=subreplace;
+            }
+            else {
+                parents->right=NULL;
+            }
+        }
+    }
+    free(replace);
 }
