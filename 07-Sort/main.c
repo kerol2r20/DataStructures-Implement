@@ -5,7 +5,7 @@
 
 void demo(int *arr, int len) {
     for(int i=0; i<len; i++) {
-        printf("%2d ", arr[i]);
+        printf("%4d ", arr[i]);
     }
     printf("\n");
 }
@@ -52,6 +52,17 @@ int main() {
     printf("Unsort: ");
     demo(unsort, len);
     QuickSort(unsort, 0, len-1);
+    printf("Sorted: ");
+    demo(unsort, len);
+    printf("\n");
+    free(unsort);
+
+    // Selection Sort
+    unsort=PokerGenerator(1000, 9999, len);
+    printf("LSD sort\n");
+    printf("Unsort: ");
+    demo(unsort, len);
+    LSD(unsort, len, 4);
     printf("Sorted: ");
     demo(unsort, len);
     printf("\n");

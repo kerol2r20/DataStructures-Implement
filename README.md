@@ -29,7 +29,7 @@
     - [x] Quck Sort
     - [ ] Merge Sort
     - [ ] Heap sort
-    - [ ] Radix Sort
+    - [x] Radix Sort
 
 ## 編譯環境
 

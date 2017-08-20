@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "Sort.h"
 
 void BubbleSort(int *unsort, int len){
@@ -54,5 +57,27 @@ void QuickSort(int *unsort, int left, int right) {
         unsort[j]=temp;
         QuickSort(unsort, left, j-1);
         QuickSort(unsort, j+1, right);
+    }
+}
+
+void LSD(int *unsort, int len, int maxdigit) {
+    for(int i=1; i<=maxdigit; i++) {
+        int bucket[10][10]={-1};
+        int top[10]={0};
+        int base=pow(10, i-1);
+        for(int j=0; j<len; j++) {
+            int lsd=unsort[j]/base%10;
+            if(top[lsd]+1>9) {
+                fprintf(stderr, "Overflow\n");
+                exit(1);
+            }
+            bucket[lsd][top[lsd]++]=unsort[j];
+        }
+        int temp=0;
+        for(int j=0; j<10; j++) {
+            for(int k=0; k<top[j]; k++) {
+                unsort[temp++]=bucket[j][k];
+            }
+        }
     }
 }
