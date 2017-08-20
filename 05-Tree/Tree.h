@@ -12,3 +12,9 @@ TreeNode* BSTSearch(TreeNode *root, int target);
 void BSTInsert(TreeNode *root, int value);
 
 void BSTDelete(TreeNode *root, int value);
+
+void InorderTraversal(TreeNode *root);
+
+void PreorderTraversal(TreeNode *root);
+
+void PostorderTraversal(TreeNode *root);

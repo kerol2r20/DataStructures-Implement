@@ -97,3 +97,27 @@ void BSTDelete(TreeNode *root, int value) {
     }
     free(replace);
 }
+
+void InorderTraversal(TreeNode *root) {
+    if(root) {
+        InorderTraversal(root->left);
+        printf("%d ", root->value);
+        InorderTraversal(root->right);
+    }
+}
+
+void PreorderTraversal(TreeNode *root) {
+    if(root) {
+        printf("%d ", root->value);
+        PreorderTraversal(root->left);
+        PreorderTraversal(root->right);
+    }
+}
+
+void PostorderTraversal(TreeNode *root) {
+    if(root) {
+        PostorderTraversal(root->left);
+        PostorderTraversal(root->right);
+        printf("%d ", root->value);
+    }
+}

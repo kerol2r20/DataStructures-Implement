@@ -12,9 +12,9 @@
 - [x] Queue
     - [x] Array implementation
     - [x] Linked-List implementation
-- [ ] Tree
+- [x] Tree
     - [x] Binary search tree
-    - [ ] Tree traversal
+    - [x] Tree traversal
 - [ ] Graph
     - [ ] Graph traversal (DFS, BFS)
     - [ ] Minimum spanning tree
