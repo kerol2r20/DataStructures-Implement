@@ -35,5 +35,27 @@ int main() {
     printf("\n");
     free(unsort);
 
+    // Selection Sort
+    unsort=PokerGenerator(1, 100, len);
+    printf("Selection sort\n");
+    printf("Unsort: ");
+    demo(unsort, len);
+    SelectionSort(unsort, len);
+    printf("Sorted: ");
+    demo(unsort, len);
+    printf("\n");
+    free(unsort);
+
+    // Selection Sort
+    unsort=PokerGenerator(1, 100, len);
+    printf("Quick sort\n");
+    printf("Unsort: ");
+    demo(unsort, len);
+    QuickSort(unsort, 0, len-1);
+    printf("Sorted: ");
+    demo(unsort, len);
+    printf("\n");
+    free(unsort);
+
     return 0;
 }

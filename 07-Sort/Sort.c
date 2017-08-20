@@ -21,3 +21,38 @@ void InsertionSort(int *unsort, int len) {
         }
     }
 }
+
+void SelectionSort(int *unsort, int len) {
+    for(int i=0; i<len; i++) {
+        int MinIndex=i;
+        for(int j=i+1; j<len; j++) {
+            if(unsort[j]<unsort[MinIndex]) {
+                MinIndex=j;
+            }
+        }
+        int temp=unsort[i];
+        unsort[i]=unsort[MinIndex];
+        unsort[MinIndex]=temp;
+    }
+}
+
+void QuickSort(int *unsort, int left, int right) {
+    if(left<right) {
+        int i=left, j=right+1;
+        int pivote=unsort[i];
+        do {
+            for(i=i+1; unsort[i]<pivote; i++);
+            for(j=j-1; unsort[j]>pivote; j--);
+            if(i<j) {
+                int temp=unsort[i];
+                unsort[i]=unsort[j];
+                unsort[j]=temp;
+            }
+        } while(i<j);
+        int temp=unsort[left];
+        unsort[left]=unsort[j];
+        unsort[j]=temp;
+        QuickSort(unsort, left, j-1);
+        QuickSort(unsort, j+1, right);
+    }
+}

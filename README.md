@@ -23,9 +23,10 @@
         - [ ] Borůvka's Algorithm
     - [ ] Dijkstra's Shortest Path
 - [ ] Sort
-    - [ ] Bubble sort
-    - [ ] Selection Sort
-    - [ ] Quck Sort
+    - [x] Bubble sort
+    - [x] Selection Sort
+    - [x] Insertion Sort
+    - [x] Quck Sort
     - [ ] Merge Sort
     - [ ] Heap sort
     - [ ] Radix Sort
