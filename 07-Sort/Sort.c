@@ -11,3 +11,13 @@ void BubbleSort(int *unsort, int len){
         }
     }
 }
+
+void InsertionSort(int *unsort, int len) {
+    for(int i=1; i<len; i++) {
+        int pivote=unsort[i];
+        for(int j=i-1; j>=0 && unsort[j]>pivote; j--) {
+            unsort[j+1]=unsort[j];
+            unsort[j]=pivote;
+        }
+    }
+}
