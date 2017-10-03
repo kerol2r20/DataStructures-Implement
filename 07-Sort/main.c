@@ -68,5 +68,17 @@ int main() {
     printf("\n");
     free(unsort);
 
+    // Merge Sort
+    unsort=PokerGenerator(1000, 9999, len);
+    printf("Merge sort\n");
+    printf("Unsort: ");
+    demo(unsort, len);
+    int *sorted = MergeSort(unsort, 0, len);
+    printf("Sorted: ");
+    demo(sorted, len);
+    printf("\n");
+    free(unsort);
+    free(sorted);
+
     return 0;
 }

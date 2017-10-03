@@ -81,3 +81,35 @@ void LSD(int *unsort, int len, int maxdigit) {
         }
     }
 }
+
+int* MergeSort(int *unsort, int left, int right) {
+	int *sorted=(int*) malloc(sizeof(int)*(right-left+1));
+	if(left==right){
+		sorted[0]=unsort[left];
+	}
+	else {
+		int mid=(left+right)/2;
+		int LSize=(mid-left+1);
+		int RSize=(right-mid);
+		int *LSorted=MergeSort(unsort, left, mid);
+		int *RSorted=MergeSort(unsort, mid+1, right);
+		int i=0, j=0, z=0;
+		while(i<LSize && j<RSize) {
+			if(LSorted[i]<=RSorted[j]) {
+				sorted[z++]=LSorted[i++];
+			}
+			else {
+				sorted[z++]=RSorted[j++];
+			}
+		}
+		while(i<LSize) {
+			sorted[z++]=LSorted[i++];
+		}
+		while(j<RSize) {
+			sorted[z++]=RSorted[j++];
+		}
+		free(LSorted);
+		free(RSorted);
+	}
+	return sorted;
+}
