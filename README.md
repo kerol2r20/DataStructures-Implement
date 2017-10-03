@@ -27,7 +27,7 @@
     - [x] Selection Sort
     - [x] Insertion Sort
     - [x] Quck Sort
-    - [ ] Merge Sort
+    - [x] Merge Sort
     - [ ] Heap sort
     - [x] Radix Sort
 
