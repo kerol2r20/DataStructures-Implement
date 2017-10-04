@@ -16,7 +16,7 @@
     - [x] Binary search tree
     - [x] Tree traversal
 - [ ] Graph
-    - [ ] Graph traversal (DFS, BFS)
+    - [x] Graph traversal (DFS, BFS)
     - [ ] Minimum spanning tree
         - [ ] Prim's Algorithm
         - [ ] Kruskal's Algorithm
