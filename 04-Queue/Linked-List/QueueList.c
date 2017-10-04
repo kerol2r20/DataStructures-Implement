@@ -42,6 +42,9 @@ int deQueue(QueueList *queue) {
         int temp=queue->front->value;
         ListNode *previous=queue->front;
         queue->front=queue->front->next;
+	if(!queue->front) {
+		queue->rear=NULL;
+	}
         free(previous);
         return temp;
     }

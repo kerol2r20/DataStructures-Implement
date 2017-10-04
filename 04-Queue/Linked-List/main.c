@@ -8,5 +8,9 @@ int main() {
     }
     printf("%d\t", deQueue(queue));
     printf("%d\t", deQueue(queue));
+    printf("%d\t", deQueue(queue));
+    printf("%d\t", deQueue(queue));
+    printf("%d\t", deQueue(queue));
+    enQueue(queue, 6);
     return 1;
 }
